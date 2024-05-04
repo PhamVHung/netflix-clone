@@ -17,7 +17,7 @@
    ```
    - For server
     ```bash
-   cd client/
+   cd server/
    npm install
    ```
 2. Configure `.env` file in the `server` folder
