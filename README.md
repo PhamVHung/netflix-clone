@@ -8,6 +8,32 @@
 
 [Part 2](https://youtu.be/Q_uLi4f27Lc)<br>
 
+# How to run
+1. Install dependencies
+   - For client
+   ```bash
+   cd client/
+   npm install
+   ```
+   - For server
+    ```bash
+   cd client/
+   npm install
+   ```
+2. Configure `.env` file in the `server` folder
+    ```
+    MONGODB_URL="mongodb+srv://phamhung155tp:x8NuYAStdeNoCpE8@cluster0.dvr7v4t.mongodb.net/"
+    PORT=5000
+    TOKEN_SECRET=IAMTHEBONEOFMYSWORD
+    TMDB_BASE_URL=https://api.themoviedb.org/3/
+    TMDB_KEY=716df69a3fedbd2ed502d91e6b491761
+    ```
+3. Run program
+    ```bash
+    cd client
+    npm start
+    ```
+
 # Resource
 
 [Create React App](https://create-react-app.dev/)<br>
