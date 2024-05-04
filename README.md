@@ -22,11 +22,11 @@
    ```
 2. Configure `.env` file in the `server` folder
     ```
-    MONGODB_URL="mongodb+srv://phamhung155tp:x8NuYAStdeNoCpE8@cluster0.dvr7v4t.mongodb.net/"
-    PORT=5000
-    TOKEN_SECRET=IAMTHEBONEOFMYSWORD
-    TMDB_BASE_URL=https://api.themoviedb.org/3/
-    TMDB_KEY=716df69a3fedbd2ed502d91e6b491761
+    MONGODB_URL=
+    PORT=
+    TOKEN_SECRET=
+    TMDB_BASE_URL=
+    TMDB_KEY=
     ```
 3. Run program
     ```bash
