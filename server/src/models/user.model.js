@@ -48,6 +48,15 @@ userSchema.methods.validPassword = function (password) {
   return this.password === hash;
 };
 
+userSchema.methods.resetPassword = function (oldPassword) {
+  if (this.validPassword(oldPassword)) {
+    this.setPassword("PASSWORD");
+    return true;
+  } else {
+    return false;
+  }
+};
+
 const userModel = mongoose.model("User", userSchema);
 
 export default userModel;

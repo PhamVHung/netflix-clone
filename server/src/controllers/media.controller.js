@@ -110,4 +110,3 @@ const getDetail = async (req, res) => {
 };
 
 export default { getList, getGenres, search, getDetail };
-
