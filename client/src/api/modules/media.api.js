@@ -16,6 +16,7 @@ const mediaApi = {
         mediaEndpoints.list({ mediaType, mediaCategory, page })
       );
 
+      console.log(response);
       return { response };
     } catch (err) {
       return { err };
