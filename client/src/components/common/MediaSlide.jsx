@@ -5,7 +5,7 @@ import AutoSwiper from "./AutoSwiper";
 import { toast } from "react-toastify";
 import MediaItem from "./MediaItem";
 
-const MediaSlide = ({ mediaType, mediaCategory, mediaGenre }) => {
+const MediaSlide = ({ mediaType, mediaCategory }) => {
   const [medias, setMedias] = useState([]);
 
   useEffect(() => {
@@ -15,6 +15,8 @@ const MediaSlide = ({ mediaType, mediaCategory, mediaGenre }) => {
         mediaCategory,
         page: 1,
       });
+
+      console.log(response)
 
       if (response) setMedias(response.results);
       if (err) toast.error(err.message);
