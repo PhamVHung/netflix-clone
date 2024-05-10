@@ -23,21 +23,6 @@ const MediaSlide = ({ mediaType, mediaCategory, mediaGenre }) => {
     getMedias();
   }, [mediaType, mediaCategory]);
 
-  useEffect(() => {
-    const getMedias = async () => {
-      const { response, err } = await mediaApi.getListByGenre({
-        mediaType,
-        mediaGenre,
-        page: 1,
-      });
-
-      if (response) setMedias(response.results);
-      if (err) toast.error(err.message);
-    };
-
-    getMedias();
-  }, [mediaGenre, mediaType]);
-
   return (
     <AutoSwiper>
       {medias.map((media, index) => (
