@@ -7,22 +7,24 @@ import MediaItem from "./MediaItem";
 
 const MediaSlide = ({ mediaType, mediaCategory }) => {
   const [medias, setMedias] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const getMedias = async () => {
-      const { response, err } = await mediaApi.getList({
-        mediaType,
-        mediaCategory,
-        page: 1,
-      });
-
-      console.log(response)
-
-      if (response) setMedias(response.results);
-      if (err) toast.error(err.message);
+    const fetchMedias = async () => {
+      try {
+        const response = await mediaApi.getList({
+          mediaType,
+          mediaCategory,
+          page: 1,
+        });
+        setMedias(response.results);
+      } catch (error) {
+        setError(error.message);
+        toast.error(error.message);
+      }
     };
 
-    getMedias();
+    fetchMedias();
   }, [mediaType, mediaCategory]);
 
   return (
@@ -32,6 +34,7 @@ const MediaSlide = ({ mediaType, mediaCategory }) => {
           <MediaItem media={media} mediaType={mediaType} />
         </SwiperSlide>
       ))}
+      {error && <div>Error: {error}</div>}
     </AutoSwiper>
   );
 };
