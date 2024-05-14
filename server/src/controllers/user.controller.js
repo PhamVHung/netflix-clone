@@ -4,7 +4,7 @@ import responseHandler from "../handlers/response.handler.js";
 
 const signup = async (req, res) => {
   try {
-    const { username, password, displayName } = req.body;
+    const { username, password, displayName, role } = req.body;
 
     const checkUser = await userModel.findOne({ username });
 
@@ -16,6 +16,7 @@ const signup = async (req, res) => {
     user.displayName = displayName;
     user.username = username;
     user.setPassword(password);
+    user.role = role;
 
     await user.save();
 
